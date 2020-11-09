@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+
+    <link rel="stylesheet" href="cacl.css">
+
+    <style>
+        #answer {
+    background-color: hsl(159, 23%, 50%);
+    height: 25px;
+    font-weight: 700;
+    font-size: 22px;
+    margin-top: 0;
+    border-top: 0.5 px solid lightgray;
+    text-align: right;
+}
+#display {
+    background-color: hsl(159, 23%, 50%);
+    height: 25px;
+    font-weight: 700;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    border-bottom: 4px solid hsl(159, 23%, 50%);
+}
+    </style>
+</head>
+<body>
+
+    <script>
+             var frame = document.getElementById("frame");
+             frame.style.backgroundColor = "blue";
+          
+    </script>
+    <div class="frame" id="frame">
+        <form name="calculator"><input type="text" name="screen" id="display" maxlength="25" placeholder="0" readonly>
+            <input type="text" name="screen" id="answer" maxlength="25" placeholder="0" readonly></form>
+
+        <table border="0">
+
+            <tr>
+                <td><input type="button" id="symbols" value="^" onclick="document.getElementById('display').value =Math.pow(document.getElementById('display').value, document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="3√" onclick="document.getElementById('display').value =Math.cbrt(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="R" onclick="document.getElementById('display').value =Math.round(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="log" onclick="document.getElementById('display').value =Math.log(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="log10" onclick="document.getElementById('display').value =Math.log10(document.getElementById('display').value)"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="symbols" value="sin" onclick="document.getElementById('answer').value =Math.sin(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="cos" onclick="document.getElementById('answer').value =Math.cos(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="tan" onclick="document.getElementById('answer').value =Math.tan(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="√" onclick="document.getElementById('answer').value =Math.sqrt(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="cos -1" onclick="document.getElementById('answer').value =Math.acos(document.getElementById('display').value)"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="symbols" value="tan -1" onclick="document.getElementById('answer').value =Math.atan(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="sin -1" onclick="document.getElementById('answer').value =Math.asin(document.getElementById('display').value)"></td>
+                <td><input type="button" id="symbols" value="%" onclick="document.getElementById('display').value += '%'"></td>
+                <td><input type="button" id="symbols" value="M-" onclick="document.getElementById('display').value += '-'"></td>
+                <td><input type="button" id="symbols" value="M+" onclick="document.getElementById('display').value += '+'"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="number" value="7" onclick="document.getElementById('display').value += '7'"></td>
+                <td><input type="button" id="number" value="8" onclick="document.getElementById('display').value += '8'"></td>
+                <td><input type="button" id="number" value="9" onclick="document.getElementById('display').value += '9'"></td>
+                <td><input type="button" id="ac" value="OFF" onclick="document.getElementById('answer').value = ' '"></td>
+                <td><input type="button" id="ac" value="AC" onclick="document.getElementById('display').value = ' '"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="number" value="4" onclick="document.getElementById('display').value += '4'"></td>
+                <td><input type="button" id="number" value="5" onclick="document.getElementById('display').value += '5'"></td>
+                <td><input type="button" id="number" value="6" onclick="document.getElementById('display').value += '6'"></td>
+                <td><input type="button" id="symbols" value="x" onclick="document.getElementById('display').value += '*'"></td>
+                <td><input type="button" id="symbols" value="/" onclick="document.getElementById('display').value += '/'"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="number" value="1" onclick="document.getElementById('display').value += '1'"></td>
+                <td><input type="button" id="number" value="2" onclick="document.getElementById('display').value += '2'"></td>
+                <td><input type="button" id="number" value="3" onclick="document.getElementById('display').value += '3'"></td>
+                <td><input type="button" id="symbols" value="-" onclick="document.getElementById('display').value += '-'"></td>
+                <td><input type="button" id="symbols" value="+" onclick="document.getElementById('display').value += '+'"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="number" value="0" onclick="document.getElementById('display').value += '0'"></td>
+                <td><input type="button" id="number" value="." onclick="document.getElementById('display').value += '.';"></td>
+                <td><input type="button" id="number" value="00" onclick="document.getElementById('display').value += '00'"></td>
+                <td><input type="button" id="number" value="RAN" onclick="document.getElementById('answer').value = Math.random()"></td>
+                <td><input type="button" id="equal" value="=" onclick="document.getElementById('answer').value = eval(document.getElementById('display').value)"></td>
+            </tr>
+             
+        </table>
+    </div>
+</body>
+</html>
